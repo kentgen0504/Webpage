@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graded Exercise 2</title>
+    <style>
+        h2, p {
+            text-align: center;
+        }
+        fieldset{
+            max-width:fit-content;
+            overflow: auto; 
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        textarea{
+            width: 240px;
+        }
+        input, select, textarea {
+            margin-bottom: 10px;
+        }
+        legend {
+            font-size: 20px;
+        }
+        input, select, textarea  {
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Sign-Up Sheet</legend>
+
+            <label>Name: </label><br>
+            <input type="text" id="name" onfocus="onFocus('name')" onblur="onBlur('name')" size='30'><br>
+
+            <label>Preferred Username: </label><br>
+            <input type="text" id="username" onfocus="onFocus('username')" onblur="onBlur('username')" size='30'><br>
+
+            <label>Gender: </label></br>
+            <select id="gender" onfocus="onFocus('gender')" onblur="onBlur('gender')">
+                <option disabled selected value="">Select an option...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="NA">Prefer not to mention</option>
+            </select><br>
+
+            <label>Email: </label><br>
+            <input type="email" id="email" onfocus="onFocus('email')" onblur="onBlur('email')" size='30'><br>
+
+            <label>Password: </label><br>
+            <input type="password" id="pWord" onfocus="onFocus('password')" onblur="onBlur('password')" size='30'><br>
+            
+            <label>Address: </label><br>
+            <input type="text" id="address" onfocus="onFocus('address')" onblur="onBlur('address')" size='30'><br>
+            
+            <label>Interests: </label></br>
+            <textarea id="interests" id="interests" onfocus="onFocus('interests')" onblur="onBlur('interests')"></textarea><br>
+            
+            <input type="reset" value="Reset" onclick="resetAll()">
+            <input type="button" value="Submit" onclick="showResult()">
+        </fieldset>
+    </form>
+    <h2 id="resultHeader"></h3>
+    <p id="resultBody"></p>
+    <script>
+        function onBlur(id){
+            if (id === 'name'){
+                let name = document.getElementById("name").value;
+                if (name == ""){
+                    document.getElementById("name").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("name").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'username'){
+                let username = document.getElementById("username").value;
+                if (username == ""){
+                    document.getElementById("username").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("username").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'password'){
+                let password = document.getElementById("pWord").value;
+                if (password === ""){
+                    document.getElementById("pWord").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("pWord").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'email'){
+                let email = document.getElementById("email").value;
+                if (email == ""){
+                    document.getElementById("email").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("email").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'address'){
+                let address = document.getElementById("address").value;
+                if (address == ""){
+                    document.getElementById("address").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("address").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'interests'){
+                let interests = document.getElementById("interests").value;
+                if (interests == ""){
+                    document.getElementById("interests").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("interests").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'gender'){
+                let gender = document.getElementById("gender").value;
+                if (gender == ""){
+                    document.getElementById("gender").style.borderColor = "red";
+                }
+                else{
+                    document.getElementById("gender").style.borderColor = "green";
+                }
+            }
+        }
+
+        function onFocus(id){
+            if (id === 'name'){
+                let name = document.getElementById("name").value;
+                if (name != ""){
+                    document.getElementById("name").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'username'){
+                let username = document.getElementById("username").value;
+                if (username != ""){
+                    document.getElementById("username").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'pWord'){
+                let password = document.getElementById("pWord").value;
+                if (password != ""){
+                    document.getElementById("pWord").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'email'){
+                let email = document.getElementById("email").value;
+                if (email != ""){
+                    document.getElementById("email").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'address'){
+                let address = document.getElementById("address").value;
+                if (address != ""){
+                    document.getElementById("address").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'interests'){
+                let interests = document.getElementById("interests").value;
+                if (interests != ""){
+                    document.getElementById("interests").style.borderColor = "green";
+                }
+            }
+
+            if (id === 'gender'){
+                let gender = document.getElementById("gender").value;
+                if (gender != ""){
+                    document.getElementById("gender").style.borderColor = "green";
+                }
+            }
+        }
+
+        function resetAll(){
+            document.getElementById("name").style.borderColor = "black";
+            document.getElementById("username").style.borderColor = "black";
+            document.getElementById("email").style.borderColor = "black";
+            document.getElementById("pWord").style.borderColor = "black";
+            document.getElementById("address").style.borderColor = "black";
+            document.getElementById("interests").style.borderColor = "black";
+            document.getElementById("gender").style.borderColor = "black";
+
+            document.getElementById("resultHeader").innerHTML = "";
+            document.getElementById("resultBody").innerHTML = "";
+        }
+
+        function showResult(){
+            let name = document.getElementById("name").value;
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let address = document.getElementById("address").value;
+            let interests = document.getElementById("interests").value;
+            let gender = document.getElementById("gender").value;
+
+            if (name != "" && username != "" && email != "" && address != "" && interests != "" && gender != ""){
+                document.getElementById("resultHeader").style.color = "black";
+                document.getElementById("resultBody").style.color = "black";
+
+                document.getElementById("resultHeader").innerHTML = "Result:";
+                document.getElementById("resultBody").innerHTML = "Name: " + name + "<br>Username: " + username + "<br>Email: " + email + "<br>Address: " + address + "<br>Interests: " + interests + "<br>Gender: " + gender;
+            }
+            else{
+                document.getElementById("resultHeader").style.color = "red";
+                document.getElementById("resultBody").style.color = "red";
+
+                document.getElementById("resultHeader").innerHTML = "Error:";
+                document.getElementById("resultBody").innerHTML = "Missing Input";
+
+            }
+        }
+        
+    </script>
+</body>
+</html>

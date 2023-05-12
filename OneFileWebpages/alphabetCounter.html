@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Counter</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+  
+    <h1>Alphabet Counter</h1>
+    <input type="text" id="strInput" size="50" placeholder="Input String"><br><br>
+    <button onclick="alphaCounter()">Submit</button><br><br>
+    <h3>Result:</h3>
+    <p id="conCount">Number of Consonants: ?</p>
+    <p id="vowCount">Number of Vowels: ?</p>
+
+
+    <script>
+        function alphaCounter() {
+            let strInp = document.getElementById("strInput").value;
+
+            let consonant_arr = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+            let vowels_arr = ["a", "e", "i", "o", "u"];
+
+            let conNum = 0;
+            let vowNum = 0;
+
+            for (let i = 0; i < strInp.length; i++) {
+                if(consonant_arr.includes(strInp[i].toLowerCase())){
+                    conNum++;
+                }
+                if(vowels_arr.includes(strInp[i].toLowerCase())){
+                    vowNum++;
+                }
+            }
+
+            document.getElementById("conCount").innerHTML = "Number of Consonants: " + conNum;
+            document.getElementById("vowCount").innerHTML = "Number of Vowels: " + vowNum;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Finder</title>
+    <style>
+        body {text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>First Vowel Finder</h1>
+    <input type="text" id="strInput" size="50" placeholder="Input String"><br><br>
+    <button onclick="vowelFinder()">Submit</button><br><br>
+    <h3>Result:</h3>
+    <p id="vowelIndex">The first vowel can be found at index: ?</p>
+    
+    <script>
+        function vowelFinder(){
+            let strInp = document.getElementById("strInput").value;
+
+            let vowels_arr = ["a", "e", "i", "o", "u"];
+
+            for (let i = 0; i < strInp.length; i++) {
+                if(vowels_arr.includes(strInp[i].toLowerCase())){
+                    document.getElementById("vowelIndex").innerHTML = "The first vowel can be found at index: " + i;
+                    return false;
+                }
+            }
+
+            document.getElementById("vowelIndex").innerHTML = "No Vowel Found";
+        }
+    </script>
+</body>
+</html>

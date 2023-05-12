@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Counter</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1>Cube Counter</h1>
+    <input type="text" id="input1" size="10" placeholder="Input a Number" value=""><br><br>
+    <input type="text" id="input2" size="10" placeholder="Input a Number" value=""><br><br>
+    <input type="text" id="input3" size="10" placeholder="Input a Number" value=""><br><br>
+    <button onclick="cubeCounter()">Submit</button><br><br>
+    <h3>Result:</h3>
+    <p id="countResult">Sum of Cubes: ?</p>
+
+    <script>
+        function cubeCounter() {
+            let num1 = document.getElementById("input1").value;
+            let num2 = document.getElementById("input2").value;
+            let num3 = document.getElementById("input3").value;
+
+            if (num1 === '' || num2 === '' || num3 === '' ) {
+                document.getElementById("countResult").innerHTML = "Error: Missing Input.";
+                
+            }
+            else if (Number.isNaN(Number(num1)) || Number.isNaN(Number(num2)) || Number.isNaN(Number(num3))){
+                document.getElementById("countResult").innerHTML = "Error: Invalid Input/s.";
+            }
+            else {
+                let cubeSum = Math.pow(num1, 3) + Math.pow(num2, 3) + Math.pow(num3, 3);
+                document.getElementById("countResult").innerHTML = "Sum of Cubes: " + cubeSum;
+            }
+        }
+    </script> 
+</body>
+</html>
